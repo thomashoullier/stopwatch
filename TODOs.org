@@ -1,0 +1,22 @@
+:PROPERTIES:
+:CATEGORY: stopwatch
+:END:
+
+* Program
+** TODO Format the timer display
+Go from 0 to 1 hour.
+
+** TODO Refresh rate of program
+Add a halfdelay (ncurses), which waits for user input.
+The user input is processed in the following frame.
+
+** TODO Installation scripts
+Have a makefile for installing/uninstalling/updating the program on our machine.
+
+* Documentation
+** TODO Demo video
+Host a demo video of the software on our website and put it in the README.
+
+** TODO Diagram of the user interface/program state
+Document the user interface and program state: start, stop, resume, counting,
+reset etc.
