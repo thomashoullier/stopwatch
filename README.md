@@ -3,6 +3,12 @@ This is a simple stopwatch program with an ncurses UI.
 
 ## Usage
 
+## Features
+* The resolution is the millisecond.
+* No limit set to the maximum duration timed.
+* Display is hours:minute:seconds.milliseconds.
+* The time reference is the local computer clock.
+
 ## Installation
 
 ### Instructions

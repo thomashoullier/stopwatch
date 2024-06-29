@@ -3,8 +3,8 @@
 :END:
 
 * Program
-** TODO Format the timer display
-Go from 0 to 1 hour.
+** DONE Format the timer display
+CLOSED: [2024-06-29 Sat 15:20]
 
 ** TODO Refresh rate of program
 Add a halfdelay (ncurses), which waits for user input.
