@@ -1,18 +1,27 @@
-#include <iostream>
 #include <chrono>
 #include <thread>
 #include <format>
+#include <ncurses.h>
 
 int main () {
-  std::cout << "Hello" << std::endl;
+
+  /* ncurses init */
+  initscr();
+
 
   auto t_start = std::chrono::high_resolution_clock::now();
-  std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+  std::this_thread::sleep_for(std::chrono::milliseconds(767));
   auto t_stop = std::chrono::high_resolution_clock::now();
 
   auto dur = std::chrono::duration_cast<std::chrono::milliseconds>(t_stop -
                                                                    t_start);
   dur *= 4500;
-  std::cout << std::format("{:%T}", dur) << std::endl;
-  //std::cout << dur.count() << std::endl;
+
+  auto dur_str = std::format("{:%T}", dur);
+  printw(dur_str.c_str());
+  refresh();
+
+  /* ncurses quit */
+  getch();
+  endwin();
 }
