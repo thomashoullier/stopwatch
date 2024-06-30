@@ -25,6 +25,7 @@ Have a makefile for installing/uninstalling/updating the program on our machine.
 ** TODO Framerate is low
 Using the ncurses function halfdelay constrains the framerate to be roughly 10
 fps. This is quite low.
+We can use nodelay on getch to have a variable framerate.
 
 ** TODO Clock is imprecise (error)
 The clock is imprecise due to our tying the input with the framerate.

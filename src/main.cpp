@@ -1,6 +1,7 @@
 #include <chrono>
 #include <string>
 #include <ncurses.h>
+#include "Clock.h"
 
 void print_in_middle(const std::string &str) {
   auto y = LINES / 2;
@@ -16,24 +17,20 @@ int main () {
   halfdelay(1); // 100ms frame time on getch.
   noecho();
 
-  auto t_start = std::chrono::high_resolution_clock::now();
+  Clock clk;
 
   char ch;
   while ((ch = getch()) != 'q') {
     switch (ch) {
     case ERR: // Update the timer with usual framerate.
       {
-        auto t_cur = std::chrono::high_resolution_clock::now();
-        auto dur = std::chrono::duration_cast<std::chrono::milliseconds>(t_cur -
-                                                                         t_start);
-        auto dur_str = std::format("{:%T}", dur);
+        auto dur_str = clk.get_duration();
         print_in_middle(dur_str);
         refresh();
         break;
       }
     case ' ': // Stop/resume timer.
-      // Save the time at which we stopped.
-      auto t_stop = std::chrono::high_resolution_clock::now();
+      clk.stop();
       nocbreak(); cbreak(); // deactivate the halfdelay.
       while ((ch = getch()) != ' ') {
         switch (ch) {
@@ -44,9 +41,7 @@ int main () {
         }
         // Do nothing otherwise.
       }
-      // Continue, with clock shifted by the pause time
-      auto t_resume = std::chrono::high_resolution_clock::now();
-      t_start += (t_resume - t_stop);
+      clk.resume();
       halfdelay(1);
       break;
     }
