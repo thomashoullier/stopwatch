@@ -2,6 +2,7 @@
 #include <string>
 #include <ncurses.h>
 #include "Clock.h"
+#include<thread>
 
 void print_in_middle(const std::string &str) {
   auto y = LINES / 2;
@@ -14,39 +15,31 @@ int main () {
   initscr();
   cbreak();
   curs_set(0); // Hide the cursor.
-  halfdelay(1); // 100ms frame time on getch.
   noecho();
 
   Clock clk;
 
   char ch;
+  nodelay(stdscr, FALSE); // Replace by toggle.
   while ((ch = getch()) != 'q') {
-    switch (ch) {
-    case ERR: // Update the timer with usual framerate.
-      {
-        auto dur_str = clk.get_duration();
-        print_in_middle(dur_str);
-        refresh();
-        break;
-      }
-    case ' ': // Stop/resume timer.
-      clk.stop();
-      nocbreak(); cbreak(); // deactivate the halfdelay.
-      while ((ch = getch()) != ' ') {
-        switch (ch) {
-        case 'q':
-          // Quit the program.
-          endwin();
-          return 0;
-        }
-        // Do nothing otherwise.
-      }
-      clk.resume();
-      halfdelay(1);
+    auto dur_str = clk.get_duration();
+    print_in_middle(dur_str);
+    refresh();
+
+    switch(ch) {
+    case ' ':
+      nodelay(stdscr, TRUE); // Replace by toggle.
+      clk.resume(); // TODO: toggle clock.
+      break;
+    case 'q':
+      endwin();
+      return 0;
+    case ERR:
+      flushinp();
+      std::this_thread::sleep_for(std::chrono::milliseconds(16));
       break;
     }
   }
 
-  /* ncurses quit */
   endwin();
 }

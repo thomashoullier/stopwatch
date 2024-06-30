@@ -24,3 +24,5 @@ void Clock::resume() {
   t_start += t_resume - t_stop; /* Shift the clock by the time paused. */
   running_p = true;
 }
+
+//TODO: Add a toggle instead.
