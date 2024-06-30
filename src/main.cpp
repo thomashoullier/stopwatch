@@ -14,7 +14,7 @@ int main () {
 
   /* ncurses init */
   initscr();
-
+  curs_set(0); // Hide the cursor.
 
   auto t_start = std::chrono::high_resolution_clock::now();
   std::this_thread::sleep_for(std::chrono::milliseconds(767));
