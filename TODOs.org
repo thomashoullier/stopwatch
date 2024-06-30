@@ -22,6 +22,19 @@ The user input is processed in the following frame.
 ** TODO Installation scripts
 Have a makefile for installing/uninstalling/updating the program on our machine.
 
+** TODO Framerate is low
+Using the ncurses function halfdelay constrains the framerate to be roughly 10
+fps. This is quite low.
+
+** TODO Clock is imprecise (error)
+The clock is imprecise due to our tying the input with the framerate.
+It would be better design to decouple the two, but this takes us outside of
+ncurses for input.
+
+** TODO Clock has low resolution
+Due to the coupling of input and framerate, the measurement resolution of the
+clock is 0.1s.
+
 * Documentation
 ** TODO Demo video
 Host a demo video of the software on our website and put it in the README.
