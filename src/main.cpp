@@ -1,6 +1,4 @@
 #include <chrono>
-#include <thread>
-#include <format>
 #include <string>
 #include <ncurses.h>
 
@@ -36,7 +34,7 @@ int main () {
     case ' ': // Stop/resume timer.
       // Save the time at which we stopped.
       auto t_stop = std::chrono::high_resolution_clock::now();
-      nocbreak(); cbreak();
+      nocbreak(); cbreak(); // deactivate the halfdelay.
       while ((ch = getch()) != ' ') {
         switch (ch) {
         case 'q':
