@@ -11,12 +11,14 @@ public:
   Clock ();
   /* Get the current duration since start. */
   std::string get_duration();
+  /* Toggle the clock. */
+  void toggle();
+
+private:
   /* Stop the clock. */
   void stop();
   /* Resume the clock. */
   void resume();
-
-private:
   /* Point from which to count the duration. */
   std::chrono::time_point<std::chrono::high_resolution_clock> t_start;
   /* Time at which the clock was last stopped. */

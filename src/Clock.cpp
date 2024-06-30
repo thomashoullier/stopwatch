@@ -25,4 +25,10 @@ void Clock::resume() {
   running_p = true;
 }
 
-//TODO: Add a toggle instead.
+void Clock::toggle() {
+  if (running_p) {
+    this->stop();
+  } else {
+    this->resume();
+  }
+}
