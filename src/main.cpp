@@ -1,7 +1,14 @@
 #include <chrono>
 #include <thread>
 #include <format>
+#include <string>
 #include <ncurses.h>
+
+void print_in_middle(const std::string &str) {
+  auto y = LINES / 2;
+  auto x = (COLS - str.length()) / 2;
+  mvprintw(y, x, "%s", str.c_str());
+}
 
 int main () {
 
@@ -18,7 +25,7 @@ int main () {
   dur *= 4500;
 
   auto dur_str = std::format("{:%T}", dur);
-  printw(dur_str.c_str());
+  print_in_middle(dur_str);
   refresh();
 
   /* ncurses quit */
