@@ -1,17 +1,30 @@
 # Stopwatch
-This is a simple stopwatch program with an ncurses UI.
+This is a simple stopwatch program with a ncurses UI, written in C++.
 
 ## Usage
+Run in terminal with,
+
+```shell
+stopwatch
+```
+
+Here it is in action:
+
+TODO: demo video.
 
 ## Features
-* The resolution is 0.1s.
-* No limit set to the maximum duration timed.
-* Display is hours:minute:seconds.milliseconds.
 * The time reference is the local computer clock.
+* The program runs at roughly 60 fps, the clock resolution
+  and user input loop are tied to this framerate.
+* No limit is set to the maximum duration timed.
+* Display is hours:minute:seconds.milliseconds.
 
-## Installation
+## Build and install
+The program is installed by building from source and running the
+installation scripts.
 
 ### Instructions
+TODO: Installation scripts.
 
 ### Dependencies
 * ncurses
@@ -44,4 +57,10 @@ The default bindings are:
 * Quit: `q`
 
 ## Tested on
-We build and use this program on Gentoo Linux, amd64, with musl libc.
+We build and use this program on:
+* OS: Gentoo Linux
+* Architecture: amd64
+* Libc: musl
+* C++ compiler: gcc
+
+with whatever the latest Gentoo rolling release version is.
