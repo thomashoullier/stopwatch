@@ -6,33 +6,39 @@
 ** DONE Format the timer display
 CLOSED: [2024-06-29 Sat 15:20]
 
-** TODO Refresh rate of program
+** DONE Refresh rate of program
+CLOSED: [2024-07-01 Mon 21:59]
 Add a halfdelay (ncurses), which waits for user input.
 The user input is processed in the following frame.
 
-** TODO Create a timer class
+** DONE Create a timer class
+CLOSED: [2024-07-01 Mon 21:59]
 + Stores the start time.
 + Returns the current duration from start when queried.
 + Handles reset etc.
 
-** TODO Create a class for managing ncurses window
+** DONE Create a class for managing ncurses window
+CLOSED: [2024-07-01 Mon 21:59]
 + Manages the creation and destruction of the window.
 + Prints the timer at the center of the screen.
 
 ** TODO Installation scripts
 Have a makefile for installing/uninstalling/updating the program on our machine.
 
-** TODO Framerate is low
+** DONE Framerate is low
+CLOSED: [2024-07-01 Mon 21:59]
 Using the ncurses function halfdelay constrains the framerate to be roughly 10
 fps. This is quite low.
 We can use nodelay on getch to have a variable framerate.
 
-** TODO Clock is imprecise (error)
+** DEAD Clock is imprecise (error)
+CLOSED: [2024-07-01 Mon 21:59]
 The clock is imprecise due to our tying the input with the framerate.
 It would be better design to decouple the two, but this takes us outside of
 ncurses for input.
 
-** TODO Clock has low resolution
+** DONE Clock has low resolution
+CLOSED: [2024-07-01 Mon 21:59]
 Due to the coupling of input and framerate, the measurement resolution of the
 clock is 0.1s.
 
@@ -40,6 +46,7 @@ clock is 0.1s.
 ** TODO Demo video
 Host a demo video of the software on our website and put it in the README.
 
-** TODO Diagram of the user interface/program state
+** DONE Diagram of the user interface/program state
+CLOSED: [2024-07-01 Mon 21:59]
 Document the user interface and program state: start, stop, resume, counting,
 reset etc.
