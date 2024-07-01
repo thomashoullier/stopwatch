@@ -14,6 +14,7 @@ TODO: demo video.
 
 ## Features
 * The time reference is the local computer clock.
+* User interaction includes: Stop, Resume, Reset.
 * The program runs at roughly 60 fps, the clock resolution
   and user input loop are tied to this framerate.
 * No limit is set to the maximum duration timed.
@@ -62,5 +63,6 @@ We build and use this program on:
 * Architecture: amd64
 * Libc: musl
 * C++ compiler: gcc
+* Terminal emulator: alacritty on wayland
 
 with whatever the latest Gentoo rolling release version is.
