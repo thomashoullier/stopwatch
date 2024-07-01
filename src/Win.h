@@ -10,6 +10,7 @@ public:
   Win ();
   ~Win ();
 
+  void set_delay ();
   void toggle_nodelay ();
   void print (const std::string &str);
 };

@@ -1,6 +1,10 @@
 #include "Clock.h"
 
-Clock::Clock () {
+Clock::Clock() {
+  this->init();
+}
+
+void Clock::init() {
   t_start = std::chrono::high_resolution_clock::now();
   t_stop = t_start;
   running_p = false;

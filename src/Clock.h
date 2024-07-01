@@ -9,6 +9,8 @@ class Clock {
 public:
   /* Initiate the clock. */
   Clock ();
+  /* Go to the init state. */
+  void init();
   /* Get the current duration since start. */
   std::string get_duration();
   /* Toggle the clock. */

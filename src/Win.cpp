@@ -18,6 +18,10 @@ void Win::print(const std::string &str) {
   refresh();
 }
 
+void Win::set_delay() {
+  nodelay(stdscr, FALSE);
+}
+
 void Win::toggle_nodelay() {
   if (is_nodelay(stdscr)) {
     nodelay(stdscr, FALSE);
