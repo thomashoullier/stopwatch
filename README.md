@@ -25,7 +25,16 @@ The program is installed by building from source and running the
 installation scripts.
 
 ### Instructions
-TODO: Installation scripts.
+Clone the repository. Change to the `build/` directory, and run,
+
+```shell
+cmake ..
+make stopwatch
+make install
+```
+
+The default installation directory is `~/.local/bin/`. You might want
+to customize this in the `CMakeLists.txt`.
 
 ### Dependencies
 * ncurses

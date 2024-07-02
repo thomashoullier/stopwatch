@@ -13,6 +13,8 @@ include_directories(${CURSES_INCLUDE_DIR})
 
 file(GLOB_RECURSE STOPWATCH_SRC "${SRC_DIR}/*.cpp")
 
-add_executable(main "${SRC_DIR}/main.cpp"
+add_executable(stopwatch "${SRC_DIR}/main.cpp"
                     ${STOPWATCH_SRC})
-target_link_libraries(main ${CURSES_LIBRARIES})
+target_link_libraries(stopwatch ${CURSES_LIBRARIES})
+
+install(TARGETS stopwatch DESTINATION "~/.local/bin/")
