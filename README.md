@@ -10,7 +10,7 @@ stopwatch
 
 Here it is in action:
 
-TODO: demo video.
+https://github.com/thomashoullier/stopwatch/assets/48186690/032f56fd-3715-4a2a-b95b-a0bc3cd77ae0
 
 ## Features
 * The time reference is the local computer clock.
