@@ -36,6 +36,10 @@ make install
 The default installation directory is `~/.local/bin/`. You might want
 to customize this in the `CMakeLists.txt`.
 
+### Configuration
+The key bindings and frame wait duration may be configured by patching
+`src/config.h`.
+
 ### Dependencies
 * ncurses
 
