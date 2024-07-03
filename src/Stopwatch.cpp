@@ -18,7 +18,7 @@ void Stopwatch::run() {
       break;
     case ERR: /* Counting */
       flushinp();
-      std::this_thread::sleep_for(std::chrono::milliseconds(16));
+      std::this_thread::sleep_for(std::chrono::milliseconds(FRAME_WAIT));
       break;
     case QUIT:
       return;
