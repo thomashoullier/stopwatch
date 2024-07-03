@@ -7,11 +7,11 @@ void Stopwatch::run() {
     this->refresh_display();
 
     switch (ch) {
-    case ' ': /* Stop/resume */
+    case STOP_RESUME:
       w.toggle_nodelay();
       clk.toggle();
       break;
-    case 'r': /* Reset */
+    case RESET:
       clk.init();
       w.set_delay();
       this->refresh_display();
@@ -20,7 +20,7 @@ void Stopwatch::run() {
       flushinp();
       std::this_thread::sleep_for(std::chrono::milliseconds(16));
       break;
-    case 'q': /* Quit */
+    case QUIT:
       return;
     }
   } while ((ch = getch()) != 'q');

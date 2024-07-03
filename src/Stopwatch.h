@@ -1,6 +1,7 @@
 #ifndef STOPWATCH_H
 #define STOPWATCH_H
 
+#include "config.h"
 #include "Clock.h"
 #include "Win.h"
 #include <chrono>
