@@ -42,8 +42,12 @@ CLOSED: [2024-07-01 Mon 21:59]
 Due to the coupling of input and framerate, the measurement resolution of the
 clock is 0.1s.
 
+** TODO Configuration for key bindings and framerate.
+Add a config header for key bindings and frame wait time in milliseconds.
+
 * Documentation
-** TODO Demo video
+** DONE Demo video
+CLOSED: [2024-07-03 Wed 21:02]
 Host a demo video of the software on our website and put it in the README.
 
 ** DONE Diagram of the user interface/program state
